@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="984.0" style="-fx-background-color: FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.superliga.controllers.ConfigEquipasController">
+   <children>
+      <BorderPane layoutX="-1.0" layoutY="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="679.0" prefWidth="984.0" AnchorPane.rightAnchor="0.0">
+         <center>
+            <TableView fx:id="tvEquipas" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="415.0" prefWidth="947.0" style="-fx-background-color: ffffff;" BorderPane.alignment="CENTER">
+               <columns>
+                  <TableColumn fx:id="idCol" prefWidth="75.0" text="ID Equipa" />
+                  <TableColumn fx:id="nomeCol" prefWidth="75.0" text="Nome" />
+                  <TableColumn fx:id="siglaCol" prefWidth="75.0" text="SIGLA" />
+                  <TableColumn fx:id="estadioCol" prefWidth="75.0" text="Estádio" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </center>
+         <top>
+            <StackPane prefHeight="209.0" prefWidth="965.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox prefHeight="209.0" prefWidth="997.0" spacing="30.0" StackPane.alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="118.0" prefWidth="989.0" textFill="#d9e8f6" text="CONFIGURAÇÃO DE EQUIPAS">
+                           <font>
+                              <Font name="Candara Bold" size="29.0" />
+                           </font>
+                        </Label>
+                        <HBox alignment="CENTER" prefHeight="62.0" prefWidth="960.0" spacing="150.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="62.0" prefWidth="381.0" spacing="15.0" />
+                              <HBox alignment="CENTER" prefHeight="62.0" prefWidth="470.0" spacing="10.0">
+                                 <children>
+                                    <Button fx:id="btnAdicionar" mnemonicParsing="false" onMouseClicked="#add" prefHeight="41.0" prefWidth="152.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D9E8F6; -fx-background-radius: 70; -fx-border-radius: 70; -fx-border-width: 5;" text="Adicionar">
+                                    </Button>
+                                    <Button fx:id="btnEditar" mnemonicParsing="false" onMouseClicked="#edit" prefHeight="41.0" prefWidth="152.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D9E8F6; -fx-background-radius: 70; -fx-border-radius: 70; -fx-border-width: 5;" text="Editar">
+                                    </Button>
+                                    <Button fx:id="btnEliminar" mnemonicParsing="false" onMouseClicked="#delete" prefHeight="41.0" prefWidth="152.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #D9E8F6; -fx-background-radius: 70; -fx-border-radius: 70; -fx-border-width: 5;" text="Eliminar">
+                                    </Button>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <padding>
+                                    <Insets right="20.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <StackPane.margin>
+                        <Insets />
+                     </StackPane.margin>
+                  </VBox>
+               </children>
+            </StackPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>

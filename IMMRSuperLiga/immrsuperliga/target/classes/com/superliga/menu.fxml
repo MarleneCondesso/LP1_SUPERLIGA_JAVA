@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: #D9E8F6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.superliga.controllers.MenuController">
+    <top>
+        <StackPane prefHeight="111.0" prefWidth="1280.0" style="-fx-background-color: #3F5D77;" BorderPane.alignment="CENTER">
+            <children>
+            <ImageView fitHeight="79.0" fitWidth="257.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER_LEFT">
+               <image>
+                  <Image url="@imgs/LOGO-HORIZONTAL.png" />
+               </image>
+            </ImageView>
+                <StackPane prefHeight="109.0" prefWidth="1143.0" style="-fx-background-color: #D9E8F6;">
+                    <StackPane.margin>
+                        <Insets bottom="10.0" left="260.0" right="10.0" top="10.0" />
+                    </StackPane.margin>
+                    <children>
+                        <Button fx:id="btnSair" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#botaoSair" prefHeight="41.0" prefWidth="7.0" style="-fx-background-color: #B2C5E7; -fx-background-radius: 80; -fx-border-color: #FFF; -fx-border-width: 5; -fx-border-radius: 80;" text="SAIR" textAlignment="CENTER" StackPane.alignment="CENTER_RIGHT">
+                            <font>
+                                <Font name="Candara" size="14.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets right="35.0" />
+                            </StackPane.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                     <graphic>
+                                <FontAwesomeIconView glyphName="POWER_OFF" size="20" wrappingWidth="77.14285659790039" />
+                     </graphic>
+                        </Button>
+                    </children>
+                </StackPane>
+            </children>
+        </StackPane>
+    </top>
+    <left>
+        <StackPane fx:id="stackMenu" prefHeight="688.0" prefWidth="259.0" style="-fx-background-color: #D9E8F6;" BorderPane.alignment="CENTER">
+            <children>
+                <StackPane fx:id="stackMenuSec" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #D9E8F6;">
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </StackPane>
+                <VBox fx:id="vboxMenu" alignment="TOP_CENTER" prefHeight="679.0" prefWidth="254.0" spacing="30.0" StackPane.alignment="CENTER">
+                    <children>
+                  <VBox alignment="CENTER" spacing="15.0">
+                     <children>
+                        <Button fx:id="btnClassificacoes" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionBtnClassificacoes" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #B2C5E7; -fx-background-radius: 80; -fx-border-color: #3F5D77; -fx-border-width: 5; -fx-border-radius: 80;" text="CLASSIFICAÇÕES" textAlignment="CENTER">
+                           <font>
+                              <Font name="Candara" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                              <Button fx:id="btnEstatisticas" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionBtnEstatisticas" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #B2C5E7; -fx-background-radius: 80; -fx-border-color: #3F5D77; -fx-border-width: 5; -fx-border-radius: 80;" text="ESTATÍSTICAS" textAlignment="CENTER">
+                                  <font>
+                                      <Font name="Candara" size="14.0" />
+                                  </font>
+                                  <cursor>
+                                      <Cursor fx:constant="HAND" />
+                                  </cursor>
+                              </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                  </VBox>
+                        <Button fx:id="btnEpocas" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionBtnEpocas" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #B2C5E7; -fx-background-radius: 80; -fx-border-color: #3F5D77; -fx-border-width: 5; -fx-border-radius: 80;" text="ÉPOCAS" textAlignment="CENTER">
+                            <font>
+                                <Font name="Candara" size="14.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                     <VBox.margin>
+                        <Insets top="40.0" />
+                     </VBox.margin>
+                        </Button>
+                        <Button fx:id="btnJornadas" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionBtnJornadas" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #B2C5E7; -fx-background-radius: 80; -fx-border-color: #3F5D77; -fx-border-width: 5; -fx-border-radius: 80;" text="JORNADAS" textAlignment="CENTER">
+                            <font>
+                                <Font name="Candara" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button fx:id="btnJogos" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionBtnJogos" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #B2C5E7; -fx-background-radius: 80; -fx-border-color: #3F5D77; -fx-border-width: 5; -fx-border-radius: 80;" text="JOGOS" textAlignment="CENTER">
+                            <font>
+                                <Font name="Candara" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button fx:id="btnEquipas" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#actionBtnEquipas" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #B2C5E7; -fx-background-radius: 80; -fx-border-color: #3F5D77; -fx-border-width: 5; -fx-border-radius: 80;" text="EQUIPAS" textAlignment="CENTER">
+                            <font>
+                                <Font name="Candara" size="14.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Button fx:id="btnConfiguracoes" mnemonicParsing="false" onAction="#actionBtnConfig" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #B2C5E7; -fx-background-radius: 80; -fx-border-color: #3F5D77; -fx-border-radius: 80; -fx-border-width: 5;" text="CONFIGURAÇÕES">
+                            <font>
+                                <Font name="Candara" size="14.0" />
+                            </font>
+                        </Button>
+                    </children>
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+                </VBox>
+            </children>
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+        </StackPane>
+    </left>
+    <center>
+        <StackPane fx:id="stackPrincipal" prefHeight="679.0" prefWidth="1001.0" style="-fx-background-color: #3F5D77;" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+            <children>
+                <ImageView fx:id="img" disable="true" fitHeight="625.0" fitWidth="986.0" nodeOrientation="INHERIT" opacity="0.76" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER">
+                    <image>
+                        <Image url="@imgs/LOGO.png" />
+                    </image>
+                    <StackPane.margin>
+                        <Insets />
+                    </StackPane.margin>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+                </ImageView>
+            </children>
+        </StackPane>
+    </center>
+    <bottom>
+        <StackPane prefHeight="10.0" prefWidth="1011.0" style="-fx-background-color: #3F5D77;" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets />
+            </BorderPane.margin>
+        </StackPane>
+    </bottom>
+    <right>
+        <StackPane prefHeight="679.0" prefWidth="10.0" style="-fx-background-color: #3F5D77;" BorderPane.alignment="CENTER" />
+    </right>
+</BorderPane>

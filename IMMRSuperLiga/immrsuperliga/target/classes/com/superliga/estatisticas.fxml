@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="937.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.superliga.controllers.EstatisticasController">
+    <children>
+      <BorderPane layoutY="1.0" prefHeight="597.0" prefWidth="937.0">
+         <center>
+            <StackPane prefHeight="84.0" prefWidth="917.0" BorderPane.alignment="BOTTOM_CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="35.0" />
+               </BorderPane.margin>
+            </StackPane>
+         </center>
+         <bottom>
+            <TabPane prefHeight="423.0" prefWidth="937.0" style="-fx-background-color: #FFFFFF;" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="TOP_CENTER">
+              <tabs>
+                  <Tab fx:id="vitoriasTab" text="Equipa com mais Vitórias">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="345.0" prefWidth="1020.0">
+                           <children>
+                              <TableView fx:id="tvEquipaVitorias" layoutX="-6.0" layoutY="46.0" prefHeight="333.0" prefWidth="937.0" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="epocaVitoriaCol" prefWidth="75.0" text="Época" />
+                                    <TableColumn fx:id="equipaVitoriaCol" prefWidth="75.0" text="Equipa" />
+                                    <TableColumn fx:id="vitoriasCol" prefWidth="75.0" text="Vitórias" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <ComboBox fx:id="comboJornadaVitorias" focusTraversable="false" layoutX="737.0" layoutY="8.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" prefWidth="184.0" promptText="Nº de Jornada" style="-fx-border-radius: 40; -fx-background-radius: 40;">
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                              </ComboBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="marcadoresGeraisETab" text="Melhores Equipas Marcadores Gerais">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="345.0" prefWidth="1020.0">
+                           <children>
+                              <TableView fx:id="tvMarcadoresGeraisE" layoutX="-6.0" layoutY="46.0" prefHeight="333.0" prefWidth="937.0" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <columns>
+                                    <TableColumn fx:id="idEquipaCol" prefWidth="75.0" text="Id da Equipa" />
+                                    <TableColumn fx:id="nomeEquipaCol" prefWidth="75.0" text="Nome" />
+                                    <TableColumn fx:id="golosEquipaCol" prefWidth="75.0" text="Golos" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <ComboBox fx:id="comboJornadaEquipas" focusTraversable="false" layoutX="737.0" layoutY="8.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" prefWidth="184.0" promptText="Nº de Jornada" style="-fx-border-radius: 40; -fx-background-radius: 40;">
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                              </ComboBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                <Tab fx:id="marcadoresGeraisTab" text="Melhores Jogadores Marcadores Gerais">
+                     <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="345.0" prefWidth="1020.0">
+                           <children>
+                              <TableView fx:id="tvMarcadoresGeraisJg" layoutX="-6.0" layoutY="46.0" prefHeight="333.0" prefWidth="937.0" AnchorPane.bottomAnchor="-13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="nrAtletaCol" prefWidth="75.0" text="Número de Atleta" />
+                                  <TableColumn fx:id="nomeCol" prefWidth="75.0" text="Nome" />
+                                    <TableColumn fx:id="golosCol" prefWidth="75.0" text="Golos" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <ComboBox fx:id="comboJornadaJogadores" focusTraversable="false" layoutX="737.0" layoutY="8.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" prefWidth="184.0" promptText="Nº de Jornada" style="-fx-border-radius: 40; -fx-background-radius: 40;">
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                              </ComboBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                </Tab>
+                  <Tab fx:id="cartoesEquipasTab" text="Cartões Gerais por Equipas">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tvCartoesEquipasGerais" layoutY="29.0" prefHeight="349.0" prefWidth="937.0">
+                                 <columns>
+                                    <TableColumn fx:id="equipaCol" prefWidth="75.0" text="Equipa" />
+                                    <TableColumn fx:id="equipaCartaoCol" prefWidth="75.0" text="Cartão" />
+                                    <TableColumn fx:id="equipaQtdCol" prefWidth="75.0" text="Quantidade" />
+                                 </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                <Tab fx:id="cartoesJogadoresTab" text="Cartões Gerais por Jogadores">
+                     <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TableView fx:id="tvCartoesJogadoresGerais" layoutY="29.0" prefHeight="348.0" prefWidth="937.0">
+                                <columns>
+                                  <TableColumn fx:id="jogadorCol" prefWidth="75.0" text="Jogador" />
+                                  <TableColumn fx:id="cartaoCol" prefWidth="75.0" text="Cartão" />
+                                    <TableColumn fx:id="quantidadeCol" prefWidth="75.0" text="Quantidade" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </content></Tab>
+              </tabs>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </TabPane>
+         </bottom>
+         <top>
+              <Label alignment="CENTER" prefHeight="74.0" prefWidth="937.0" text="LISTA DE ESTATISTICAS" textAlignment="CENTER" textFill="#d9e8f6" BorderPane.alignment="CENTER">
+                  <font>
+                      <Font name="System Bold" size="20.0" />
+                  </font>
+              </Label>
+         </top>
+         <right>
+            <HBox alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="915.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ComboBox fx:id="comboEpoca" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="41.0" prefWidth="184.0" promptText="Nº de Época" style="-fx-border-radius: 40; -fx-background-radius: 40;">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </ComboBox>
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+            </HBox>
+         </right>
+      </BorderPane>
+    </children> 
+</Pane>

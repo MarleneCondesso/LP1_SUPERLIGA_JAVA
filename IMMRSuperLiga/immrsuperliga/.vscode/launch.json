@@ -1,0 +1,14 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "java",
+        "name": "Launch App",
+        "request": "launch",
+        "mainClass": "com.superliga.App",
+        "vmArgs": "--module-path D:/JavaFX/javafx-sdk-11/lib --add-modules javafx.controls,javafx.fxml",
+        "args": "",
+        "projectName": "superliga"
+      }
+    ]
+  }

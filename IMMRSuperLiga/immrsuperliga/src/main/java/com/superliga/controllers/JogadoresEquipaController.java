@@ -1,0 +1,185 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.superliga.controllers;
+
+import com.superliga.App;
+import com.superliga.models.Equipa;
+import com.superliga.models.JogadorContrato;
+import com.superliga.services.EquipaService;
+import com.superliga.services.JogadorContratoService;
+import com.superliga.services.JogadorService;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.Date;
+import static java.util.Objects.isNull;
+import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import javafx.util.StringConverter;
+
+/**
+ *
+ * @author 35191
+ */
+public class JogadoresEquipaController implements Initializable {
+
+    @FXML
+    private Button btnConfig;
+
+    @FXML
+    public TableView<JogadorContrato> tvJogadoresEquipa;
+
+    @FXML
+    private TableColumn<JogadorContrato, Integer> nrAtletaCol;
+
+    @FXML
+    private TableColumn<JogadorContrato, String> equipaCol;
+
+    @FXML
+    private TableColumn<JogadorContrato, Date> entradaCol;
+
+    @FXML
+    private TableColumn<JogadorContrato, Date> saidaCol;
+
+    @FXML
+    private TableColumn<JogadorContrato, Integer> nrCamisolaCol;
+
+    @FXML 
+    private ComboBox<Equipa> comboEquipas;
+    
+    @FXML
+    private Button btnAdicionar;
+    
+    @FXML
+    private Button btnEditar;
+    
+    @FXML
+    private Button btnEliminar;
+    
+    private JogadorContratoService serviceJogadores = new JogadorContratoService();
+    private EquipaService equipaService = new EquipaService();
+    private ConfigJogadoresEquipaController configJogadoresEquipaController;
+    
+    private EquipasController equipasController;
+    private Scene scene;
+    
+    private Stage stage;
+    
+    private String titulo;
+    
+    private Equipa equipa;
+    
+    private Integer position;
+    ObservableList obsListJogadoresEquipa;
+    
+    @FXML
+    void openConfigurations(ActionEvent event) {
+        
+        try {
+            showModalConfigView("configJogadoresEquipa");
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+    }
+    /**
+     * Método de Inicialização (interface Initializable)
+     *
+     * @param url
+     * @param rb
+     */
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+    }
+    /**
+    * Método para passar valores do JogadoresEquipaController
+    *
+     * @param equipa
+    * @param pos
+     * @param equipasController
+    */
+    public void setJogadoresEquipaView(Equipa equipa, Integer pos, EquipasController equipasController) {
+        this.equipasController  = equipasController;
+
+        if (!isNull(equipa)) {
+            this.equipa = equipa;
+            this.position = pos;
+        }
+        refreshTable(equipa);
+    }
+    
+    /**
+     * Método para listagem de Jogadores após seleção da combobox Equipas.
+     * @param event 
+     */
+    @FXML
+    void actionComboBox(ActionEvent event){
+        
+        Equipa equipaCombo = comboEquipas.getSelectionModel().getSelectedItem();
+    
+        refreshTable(equipaCombo);
+    } 
+    
+     /**
+     * Método de atualização dos dados na tabela JogadoresEquipas
+     * @param 
+     */
+    public void refreshTable(Equipa equipa) {
+        obsListJogadoresEquipa = FXCollections.observableArrayList(serviceJogadores.getByTeamId(equipa.getId()));
+        configColums();
+        tvJogadoresEquipa.getItems().setAll(obsListJogadoresEquipa);
+    }
+    
+    
+    /**
+     * Método de Configuração dos dados na tabela JogadoresEquipas
+     */
+    private void configColums() {
+        nrAtletaCol.setCellValueFactory(new PropertyValueFactory<>("nrAtleta"));
+        equipaCol.setCellValueFactory(new PropertyValueFactory<>("idEquipa"));
+        entradaCol.setCellValueFactory(new PropertyValueFactory<>("entrada"));
+        saidaCol.setCellValueFactory(new PropertyValueFactory<>("saida"));
+        nrCamisolaCol.setCellValueFactory(new PropertyValueFactory<>("nrCamisola"));
+    }
+    
+    /**
+     * Método para abrir a view das Config JogadoresEquipas
+     *
+     * @param fxml
+     * @param op
+     * @param titulo
+     * @param pos
+     * @throws IOException
+     */
+    private void showModalConfigView(String fxml) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
+        fxmlLoader.load();
+
+        configJogadoresEquipaController = fxmlLoader.getController();
+        configJogadoresEquipaController.setJogadoresEquipaView(equipa, position, this);
+        scene = new Scene(fxmlLoader.getRoot());
+        stage = new Stage();
+        stage.setTitle(titulo);
+        stage.setScene(scene);
+        stage.show();
+    }
+}
